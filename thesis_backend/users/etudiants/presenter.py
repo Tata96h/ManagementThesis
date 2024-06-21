@@ -175,6 +175,6 @@ class EtudiantPresenter:
         return await self.repository.get_etudiants_by_filiere(filiere_id, limit, offset)
     
     
-    async def get_filieres(self) -> List[FiliereSchema]:
-        filieres = await self.repository.get_filieres()
+    async def get_filieres(self, limit: int, offset: int) -> List[FiliereSchema]:
+        filieres = await self.repository.get_filieres(limit, offset)
         return [FiliereSchema.from_orm(filiere) for filiere in filieres]

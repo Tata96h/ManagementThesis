@@ -118,6 +118,4 @@ class EtudiantRepositories(EtudiantRepositoriesInterface):
         result = await self.session.execute(stmt)
         return result.scalars().all()
 
-    # async def get_filieres(self):
-    #     result = await self.session.execute(select(Filiere))
-    #     return result.scalars().all()
+    

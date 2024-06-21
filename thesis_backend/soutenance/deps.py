@@ -15,11 +15,6 @@ async def get_user(
     yield user
 
 
-# async def get_repository_service(session=Depends(get_db_session)):
-#     yield {
-#         'repository': ChannelRepositories(session=session)
-#     }
-
 
 async def get_presenter(session=Depends(get_db_session)):
     presenter = ThesisPresenter(
@@ -31,8 +26,11 @@ async def get_thesis_user(thesis_id: int, utilisateur_id: int) -> dict:
     return {'thesis_id': thesis_id, 'utilisateur_id': utilisateur_id}
 
 
-async def get_limit_offset_user(user_id: int, limit: int, offset: int) -> dict:
-    return {'utilisateur_id': user_id, 'limit': limit, 'offset': offset}
+async def get_limit_offset_user(utilisateur_id, limit, offset, years_id) -> dict:
+    return {'utilisateur_id': utilisateur_id, 'limit': limit, 'years_id': years_id, 'offset': offset}
+
+async def get_limit_offset_thesis( limit, offset, annee_id) -> dict:
+    return {'limit': limit, 'annee_id': annee_id, 'offset': offset}
 
 
 async def get_slug_user(thesis_slug: str, utilisateur_id: int) -> dict:
@@ -56,11 +54,32 @@ async def get_create_data_user(utilisateur_id: int,
 
 response_data = {
     
-    
-    
+    'all_thesis': {
+        'path': '/{annee_id}',
+        'status_code': status.HTTP_200_OK,
+        # 'response_model': list[ChannelSchema]
+    },
+    'thesis': {
+        'path': '/',
+        'status_code': status.HTTP_200_OK,
+        
+    },
+    'memorant': {
+        'path': '/memorant/{annee_id}',
+        'status_code': status.HTTP_200_OK,
+        
+    },
     'create_thesis': {
         'path': '/',
         'status_code': status.HTTP_201_CREATED,
     },
-    
+    'update_thesis': {
+        'path': '/{thesis_slug}',
+        'status_code': status.HTTP_200_OK,
+    },
+    'thesisa': {
+        'path': '/{thesis_slug}',
+        'status_code': status.HTTP_200_OK,
+        'response_model': ThesisSchema
+    },
 }

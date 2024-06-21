@@ -62,9 +62,14 @@ async def get_etudiants_by_filiere(
 
 
 @etudiant_controllers.get('/get_filieres/', response_model=List[FiliereSchema])
-async def get_filieres(presenter: EtudiantPresenter = Depends(get_presenter)):
+async def get_filieres(
+    presenter: EtudiantPresenter = Depends(get_presenter),
+    limit: int | None = 20,
+    offset: int | None = 0,
+    ):
     try:
-        return await presenter.get_filieres()
+        data: dict = await get_limit_offset_user(limit, offset)
+        return await presenter.get_filieres(**data)
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
