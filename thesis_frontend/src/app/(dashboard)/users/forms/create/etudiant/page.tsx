@@ -3,8 +3,11 @@ import { useState, useRef, useEffect } from "react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Field, Label, Switch } from "@headlessui/react";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import { useRouter } from 'next/navigation';
 
 const AddEtudiant = () => {
+  const router = useRouter()
+
   const [error, setError] = useState("");
   const [newPassconfirmValue, setNewPassconfirmValue] = useState("");
   const [filiereOptions, setFiliereOptions] = useState([]);
@@ -180,8 +183,9 @@ const AddEtudiant = () => {
       console.log(formData);
 
       if (response.ok) {
-        alert("Enregistrement effectué avec succès !!!");
-        router.push("/users/forms/create/etudiant");
+        alert("Enregistrement effectué avec succès!");
+        router.push("/users/Table/etudiant");
+        router.refresh()
       } else {
         setError(`Échec de la connexion : ${response.statusText}`);
       }

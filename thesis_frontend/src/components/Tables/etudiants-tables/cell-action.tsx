@@ -22,7 +22,29 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
-  const onConfirm = async () => {};
+  const onConfirm = async () => {
+    setOpen(false)
+    try {
+      const response = await fetch(`http://127.0.0.1:8000/etudiants/${data.matricule}`, {
+        method: "DELETE",
+      });
+      //const responseData = await response.json();
+      //console.log(responseData);
+
+      if (response.ok) {
+        alert("Suppression effectuée avec succès!");
+        router.push("/users/Table/etudiant");
+        router.refresh()
+      } else {
+        alert(`Échec de suppression : ${response.statusText}`);
+      }
+    } catch (error) {
+      alert(
+        `Une erreur est survenue lors de la suppression : ${error.message}`
+      );
+    }
+
+  };
 
   return (
     <>
