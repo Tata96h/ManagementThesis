@@ -45,6 +45,28 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
     }
 
   };
+  const onUpdate=async()=>{
+    setOpen(false)
+    try {
+      const response = await fetch(`http://127.0.0.1:8000/etudiants/${data.matricule}`, {
+        method: "PATCH",
+      });
+      //const responseData = await response.json();
+      //console.log(responseData);
+
+      if (response.ok) {
+        alert("Modification effectuée avec succès!");
+        router.push("/users/Table/etudiant");
+        router.refresh()
+      } else {
+        alert(`Échec de la modification : ${response.statusText}`);
+      }
+    } catch (error) {
+      alert(
+        `Une erreur est survenue lors de la modification : ${error.message}`
+      );
+    }
+  }
 
   return (
     <>
@@ -52,6 +74,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
         isOpen={open}
         onClose={() => setOpen(false)}
         onConfirm={onConfirm}
+        onUpdate={onUpdate}
         loading={loading}
       />
       <DropdownMenu modal={false}>
@@ -73,6 +96,9 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
             onClick={() => router.push(`/dashboard/user/${data.id}`)}
           >
             <Edit className="mr-2 h-4 w-4" /> Modifier
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => setOpen(true)}>
+            <Eye className="mr-2 h-4 w-4" /> Modifier
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => setOpen(true)}>
             <Trash className="mr-2 h-4 w-4" /> Supprimer
