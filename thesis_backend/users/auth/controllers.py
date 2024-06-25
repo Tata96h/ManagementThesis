@@ -22,8 +22,13 @@ async def sign_up(
 
 @auth_controllers.post(**response_data.get('login'))
 async def login(
+<<<<<<< HEAD
         form_data: CreateLoginSchema,
        # form_data: OAuth2PasswordRequestForm = Depends(),
+=======
+        # form_data: CreateLoginSchema,
+        form_data: OAuth2PasswordRequestForm = Depends(),
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
         option_presenter=Depends(get_option_presenter),
 ):
     #breakpoint()

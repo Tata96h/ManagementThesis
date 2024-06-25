@@ -147,7 +147,11 @@ const DropdownUser = () => {
               Mon Profile
             </Link>
           </li>
+<<<<<<< HEAD
           {/* <li>
+=======
+          <li>
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
             <Link
               href="#"
               className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
@@ -167,7 +171,11 @@ const DropdownUser = () => {
               </svg>
               Mes contacts
             </Link>
+<<<<<<< HEAD
           </li> */}
+=======
+          </li>
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
           <li>
             <Link
               href="/settings"

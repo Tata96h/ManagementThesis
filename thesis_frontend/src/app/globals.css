@@ -1,5 +1,6 @@
 @tailwind base;
 @tailwind components;
+<<<<<<< HEAD
 @tailwind utilities;
 /* Importing fonts from Google */
 
@@ -93,3 +94,6 @@
         padding: 40px 15px 15px 15px;
     }
 }
+=======
+@tailwind utilities;
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997

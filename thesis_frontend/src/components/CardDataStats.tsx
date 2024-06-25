@@ -7,7 +7,10 @@ interface CardDataStatsProps {
   levelUp?: boolean;
   levelDown?: boolean;
   children: ReactNode;
+<<<<<<< HEAD
   GraduationCap?: boolean;
+=======
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
 }
 
 const CardDataStats: React.FC<CardDataStatsProps> = ({
@@ -17,7 +20,10 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
   levelUp,
   levelDown,
   children,
+<<<<<<< HEAD
   GraduationCap
+=======
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
 }) => {
   return (
     <div className="rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -70,12 +76,15 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
               />
             </svg>
           )}
+<<<<<<< HEAD
           {GraduationCap && (
            
              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-graduation-cap">
              <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
              <path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
           )}
+=======
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
         </span>
       </div>
     </div>

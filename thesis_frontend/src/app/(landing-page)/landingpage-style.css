@@ -4,7 +4,10 @@
                     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
                     @import "@/components/landing-page/slick-carousel/slick/slick.css";
                     @import "@/components/landing-page/slick-carousel/slick/slick-theme.css";
+<<<<<<< HEAD
                     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+=======
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
                     * {
                         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                     }
@@ -152,6 +155,7 @@
                     
                     .contact {
                         border-radius: 10%;
+<<<<<<< HEAD
                     }
                     /* style login */
                     /* Importing fonts from Google */
@@ -248,3 +252,6 @@
         padding: 40px 15px 15px 15px;
     }
 }
+=======
+                    }
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997

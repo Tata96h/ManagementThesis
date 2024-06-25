@@ -9,16 +9,31 @@ import { useRouter } from "next/navigation";
 
 const Login = () => {
   const router = useRouter();
+<<<<<<< HEAD
   localStorage.setItem("isload", "0");
   const session = localStorage.getItem("sessionIsActive");
 
+=======
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
   const [treatment, setTreatement] = useState(false);
   const [message, setMessage] = useState("");
   const [styleMessage, setStyleMessage] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+<<<<<<< HEAD
 
+=======
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("isload", "0");
+      const sessionIsActive = localStorage.getItem("sessionIsActive");
+      setSession(sessionIsActive);
+    }
+  }, []);
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -36,6 +51,7 @@ const Login = () => {
       username: username,
       password: password,
     };
+<<<<<<< HEAD
      console.log(JSON.stringify(formData))
     try {
       const response = await fetch("http://127.0.0.1:8000/auth/login", {
@@ -43,10 +59,19 @@ const Login = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
         cache: "no-store"
+=======
+
+    try {
+      const response = await fetch("http://localhost:8000/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
       });
 
       const responseData = await response.json();
       console.log(responseData);
+<<<<<<< HEAD
        console.log(JSON.stringify(responseData))
 
       if (response.ok) {
@@ -60,14 +85,35 @@ const Login = () => {
         localStorage.setItem("sessionIsActive", "1");
         console.log(localStorage);
         
+=======
+
+      if (response.ok) {
+        if (typeof window !== 'undefined') {
+          localStorage.setItem("accessToken", responseData.access_token);
+          localStorage.setItem("tokenType", responseData.token_type);
+          localStorage.setItem(
+            "userInfo",
+            JSON.stringify(responseData.user_info)
+          );
+
+          localStorage.setItem("sessionIsActive", "1");
+          console.log(localStorage);
+        }
+
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
         router.push("/dashboard");
       } else {
         const errorData = await response.json();
         setError(`Échec de la connexion : ${errorData.message || response.status}`);
       }
     } catch (error) {
+<<<<<<< HEAD
           setStyleMessage("alert alert-danger text-dark");
           setMessage("Ces identifiants n'existent pas");
+=======
+      setStyleMessage("alert alert-danger text-dark");
+      setMessage("Ces identifiants n'existent pas");
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
     }
   };
 
@@ -76,7 +122,10 @@ const Login = () => {
       router.push('/dashboard');
     }
   }, [session, router]);
+<<<<<<< HEAD
   
+=======
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
 
   return (
     <>
@@ -86,6 +135,7 @@ const Login = () => {
             <div className="md:max-w-md w-full sm:px-6 py-4">
               <form onSubmit={handleLogin}>
                 <div className="mb-12">
+<<<<<<< HEAD
                   <h3 className="text-3xl font-extrabold">Connexion </h3>
                 </div>
                 {treatment ? (
@@ -97,6 +147,19 @@ const Login = () => {
                     ""
                   )}
                   {error && <p>{error}</p>}
+=======
+                  {/* <h3 className="text-3xl font-extrabold">Connexion </h3> */}
+                </div>
+                {treatment ? (
+                  <div className={"text-center " + styleMessage}>
+                    {" "}
+                    {message}{" "}
+                  </div>
+                ) : (
+                  ""
+                )}
+                {error && <p>{error}</p>}
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
                 <div>
                   <div className="text-xs block mb-2">Login</div>
                   <div className="relative flex items-center">
@@ -191,9 +254,16 @@ const Login = () => {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       
 
     </>
   );
 }  
+=======
+    </>
+  );
+};
+
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
 export default Login;

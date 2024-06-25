@@ -8,6 +8,10 @@
 
 # testing
 /coverage
+<<<<<<< HEAD
+=======
+
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
 # next.js
 /.next/
 /out/

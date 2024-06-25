@@ -22,6 +22,7 @@ import {
   TabletSmartphone,
   User,
 } from 'lucide-react'
+<<<<<<< HEAD
 const handleLogout = () => {
     localStorage.setItem("sessionIsActive", "0");
     localStorage.removeItem('userInfo');
@@ -30,6 +31,8 @@ const handleLogout = () => {
 
     router.push('/login');
   };
+=======
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
 
 interface SidebarProps {
   sidebarOpen: boolean
@@ -66,6 +69,7 @@ const links: { group: string; links: SidebarLink[] }[] = [
           },
           {
             label: 'Enseignant',
+<<<<<<< HEAD
             href: '/users/Table/enseignant',
 
           },
@@ -73,6 +77,14 @@ const links: { group: string; links: SidebarLink[] }[] = [
           //   label: 'Listes',
           //   href: '/users/Liste',
           // },
+=======
+            href: '/users/Enseignant',
+          },
+          {
+            label: 'Listes',
+            href: '/users/Liste',
+          },
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
         ],
       },
       { label: 'Calendar', icon: Calendar, href: '/calendar' },
@@ -187,12 +199,20 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
+<<<<<<< HEAD
       className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
+=======
+      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-white duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
         sidebarOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
+<<<<<<< HEAD
       <div className='flex items-center bg-white justify-between gap-2 px-6 py-5.5 lg:py-6.5'>
+=======
+      <div className='flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5'>
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
         <Link href='/'>
           <Image
             width={176}
@@ -227,7 +247,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       </div>
       {/* <!-- SIDEBAR HEADER --> */}
 
+<<<<<<< HEAD
       <div className='no-scrollbar bg-black flex flex-col overflow-y-auto duration-300 ease-linear'>
+=======
+      <div className='no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear'>
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
         {/* <!-- Sidebar Menu --> */}
         <nav className='mt-5 px-4 py-4 lg:mt-9 lg:px-6'>
           {/* <!-- Menu Group --> */}
@@ -321,6 +345,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           ))}
         </nav>
         {/* <!-- Sidebar Menu --> */}
+<<<<<<< HEAD
        
       </div>
        <button className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out text-white lg:text-base mt-60">
@@ -352,6 +377,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   Se déconnecter
                 </Link>
         </button>
+=======
+      </div>
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
     </aside>
   )
 }

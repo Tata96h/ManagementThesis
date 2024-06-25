@@ -5,8 +5,11 @@ import About from '@/components/landing-page/About/index';
 import Student from '@/components/landing-page/Expert/index';
 import Gallery from '@/components/landing-page/Gallery/index';
 import Newsletter from '@/components/landing-page/Newsletter/Newsletter';
+<<<<<<< HEAD
 import './landingpage-style.css';
 
+=======
+>>>>>>> 72a4943caa0a8fe86e91703bd7adad3a3e137997
 
 
 
